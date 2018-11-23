@@ -36,6 +36,9 @@ sudo php5enmod mcrypt
 ## Install PhpMyAdmin
 sudo apt-get install phpmyadmin -y
 
+## Configure PhpMyAdmin
+echo 'Include /etc/phpmyadmin/apache.conf' >> /etc/apache2/apache2.conf
+
 # Set Permissions
 sudo chown -R www-data:www-data /var/www
 
