@@ -27,7 +27,7 @@ sudo apt-get install libapache2-mod-php5 php5 php5-common php5-curl php5-dev php
 export DEBIAN_FRONTEND="noninteractive"
 debconf-set-selections <<< "mysql-server mysql-server/root_password password $db_root_password"
 debconf-set-selections <<< "mysql-server mysql-server/root_password_again password $db_root_password"
-apt-get install mysql-server php7.0-mysql -y
+apt-get install mysql-server -y
 
 # Enabling Mod Rewrite
 sudo a2enmod rewrite
