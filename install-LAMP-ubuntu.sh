@@ -12,6 +12,7 @@ fi
 
 # Ask value for mysql root password 
 read -p 'db_root_password [secretpasswd]: ' db_root_password
+echo
 
 # Update system
 sudo apt-get update -y
