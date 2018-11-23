@@ -10,6 +10,9 @@ if [ "$(id -u)" != "0" ]; then
    exit 1
 fi
 
+# Ask value for mysql root password 
+read -p 'db_root_password [secretpasswd]: ' db_root_password
+
 # Update system
 sudo apt-get update -y
 
@@ -20,6 +23,9 @@ sudo apt-get install apache2 apache2-doc apache2-mpm-prefork apache2-utils libex
 sudo apt-get install libapache2-mod-php5 php5 php5-common php5-curl php5-dev php5-gd php5-idn php-pear php5-imagick php5-mcrypt php5-mysql php5-ps php5-pspell php5-recode php5-xsl -y
 
 ## Install MySql
+export DEBIAN_FRONTEND="noninteractive"
+debconf-set-selections <<< "mysql-server mysql-server/root_password password $db_root_password"
+debconf-set-selections <<< "mysql-server mysql-server/root_password_again password $db_root_password"
 sudo apt-get install mysql-server mysql-client libmysqlclient15.dev -y
 
 # Enabling Mod Rewrite
