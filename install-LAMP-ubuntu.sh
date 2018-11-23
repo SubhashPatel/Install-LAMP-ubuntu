@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 #######################################
 # Bash script to install an LAMP stack in ubuntu
