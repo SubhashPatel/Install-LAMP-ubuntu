@@ -42,5 +42,8 @@ echo 'Include /etc/phpmyadmin/apache.conf' >> /etc/apache2/apache2.conf
 # Set Permissions
 sudo chown -R www-data:www-data /var/www
 
+# Adjust the Firewall
+ufw allow 80/tcp
+
 # Restart Apache
 sudo service apache2 restart
